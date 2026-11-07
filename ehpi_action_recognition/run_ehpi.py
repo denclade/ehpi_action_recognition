@@ -91,7 +91,7 @@ if __name__ == '__main__':
 
     # Action Network
     action_model = ShuffleNetV2(input_size=32, n_class=3)
-    state_dict = torch.load(ehpi_model_state_file)
+    state_dict = torch.load(ehpi_model_state_file, weights_only=True)
     action_model.load_state_dict(state_dict)
     action_model.cuda()
     action_model.eval()
